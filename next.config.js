@@ -4,7 +4,7 @@ const nextConfig = {
   trailingSlash: true,
   images: {
     unoptimized: true,
-    domains: ['localhost', 'tu-wordpress-domain.com'] // Cambia por tu dominio de WordPress
+    domains: ['localhost', 'tu-wordpress-domain.com']
   },
   eslint: {
     ignoreDuringBuilds: true,
@@ -12,6 +12,10 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  experimental: {
+    forceSwcTransforms: true,
+  },
+  swcMinify: false,
 }
 
 module.exports = nextConfig
