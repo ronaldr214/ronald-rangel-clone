@@ -4,11 +4,15 @@ const nextConfig = {
   trailingSlash: true,
   images: {
     unoptimized: true,
-    domains: ['localhost', 'https://todoweb.pro/CMS'] // Cambia por tu dominio de WordPress
+    domains: ['localhost', 'tu-wordpress-domain.com'] // Cambia por tu dominio de WordPress
   },
   eslint: {
     ignoreDuringBuilds: true,
   },
+  // Deshabilita rutas dinámicas problemáticas
+  generateStaticParams: async () => {
+    return []
+  }
 }
 
 module.exports = nextConfig
