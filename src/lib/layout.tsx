@@ -10,9 +10,6 @@ const raleway = Raleway({
 export const metadata: Metadata = {
   title: 'Ronald Rangel - Estratega Digital',
   description: 'Comunicador digital y estratega creativo',
-  icons: {
-    icon: '/favicon.ico',
-  },
 }
 
 export default function RootLayout({
