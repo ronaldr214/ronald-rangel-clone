@@ -28,8 +28,7 @@ interface Media {
   source_url: string;
   alt_text: string;
 }
-
-export default function PostPage({ params }: { params: { slug: string } }) {
+export default function PostPage({ params }: { params: any }) {
   const [post, setPost] = useState<Post | null>(null);
   const [author, setAuthor] = useState<Author | null>(null);
   const [categories, setCategories] = useState<Category[]>([]);
