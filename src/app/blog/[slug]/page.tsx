@@ -1,22 +1,14 @@
-import BlogPostClient from './BlogPostClient';
-
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>
 }
 
-export default function PostPage({ params }: PageProps) {
-  return <BlogPostClient slug={params.slug} />;
-}
-
-export async function generateStaticParams() {
-  try {
-    const response = await fetch('https://todoweb.pro/CMS/wp-json/wp/v2/posts?per_page=20');
-    const posts = await response.json();
-    
-    return posts.map((post: any) => ({
-      slug: post.slug,
-    }));
-  } catch (error) {
-    return [];
-  }
+export default async function BlogPost({ params }: PageProps) {
+  const { slug } = await params;
+  
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-6">Blog Post: {slug}</h1>
+      <p>Este es el contenido del post con slug: {slug}</p>
+    </div>
+  );
 }
