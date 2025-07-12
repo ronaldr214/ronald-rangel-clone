@@ -1,15 +1,31 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  trailingSlash: true,
+  // Para Vercel, NO necesitamos output: 'export'
   images: {
-    unoptimized: true,
+    domains: ['todoweb.pro'], // Para las imágenes de WordPress
+    unoptimized: false // Vercel optimiza automáticamente
   },
-  eslint: {
-    ignoreDuringBuilds: true,
+  // Optimizaciones para Vercel
+  experimental: {
+    optimizeCss: true,
   },
-  typescript: {
-    ignoreBuildErrors: true,
+  // Headers para mejor rendimiento
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+        ],
+      },
+    ];
   },
 }
 
