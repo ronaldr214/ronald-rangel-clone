@@ -2,6 +2,12 @@ interface PageProps {
   params: Promise<{ slug: string }>
 }
 
+export async function generateStaticParams() {
+  return [
+    { slug: 'ejemplo-post' },
+  ];
+}
+
 export default async function BlogPost({ params }: PageProps) {
   const { slug } = await params;
   
