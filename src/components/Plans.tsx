@@ -74,17 +74,17 @@ export default function Plans() {
               </li>
             </ul>
             <button
-              onClick={() => window.open('https://tu-plataforma-de-pago.com/plan1', '_blank')}
-              className="w-full bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-full font-bold transition-all duration-300 mb-4"
+              onClick={() => window.open('https://mpago.li/1La11v8', '_blank')}
+              className="w-full bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-full font-bold transition-all duration-300 mb-4 cursor-pointer hover:scale-105"
             >
               ADQUIRIR PLAN
             </button>
             <div className="text-center">
               <a 
                 href="https://wa.me/573002278962?text=Hola%20Ronald,%20tengo%20una%20pregunta%20sobre%20el%20plan%20Despegue%20Estratégico" 
-                className="text-cyan-400 hover:text-cyan-300 text-sm underline"
+                className="text-gray-400 hover:text-cyan-400 text-sm transition-all duration-300 cursor-pointer hover:scale-105 inline-block"
               >
-                TENGO UNA PREGUNTA
+                ¿Tienes alguna pregunta?
               </a>
             </div>
           </div>
@@ -125,65 +125,65 @@ export default function Plans() {
               </li>
             </ul>
             <button
-              onClick={() => window.open('https://tu-plataforma-de-pago.com/plan2', '_blank')}
-              className="w-full bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-full font-bold transition-all duration-300 mb-4"
+              onClick={() => window.open('https://mpago.li/1nFLPLW', '_blank')}
+              className="w-full bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-full font-bold transition-all duration-300 mb-4 cursor-pointer hover:scale-105"
             >
               ADQUIRIR PLAN
             </button>
             <div className="text-center">
               <a 
                 href="https://wa.me/573002278962?text=Hola%20Ronald,%20tengo%20una%20pregunta%20sobre%20el%20plan%20Marca%20con%20Rumbo" 
-                className="text-cyan-400 hover:text-cyan-300 text-sm underline"
+                className="text-gray-400 hover:text-cyan-400 text-sm transition-all duration-300 cursor-pointer hover:scale-105 inline-block"
               >
-                TENGO UNA PREGUNTA
+                ¿Tienes alguna pregunta?
               </a>
             </div>
           </div>
 
-          {/* Plan 3 - Ecosistema Digital Pro (Deshabilitado) */}
+          {/* Plan 3 - Ecosistema Digital Pro (Ahora ACTIVO) */}
           <div
             ref={(el) => { cardRefs.current[2] = el; }}
             className="animate-card bg-slate-700 p-8 rounded-lg"
           >
-            <h3 className="text-2xl font-bold text-gray-400 text-center mb-6">Ecosistema Digital Pro</h3>
+            <h3 className="text-2xl font-bold text-cyan-400 text-center mb-6">Ecosistema Digital Pro</h3>
             <div className="text-center mb-6">
-              <span className="text-4xl font-black text-gray-400">$1.699.999</span>
-              <div className="text-sm text-gray-500">COP</div>
+              <span className="text-4xl font-black text-white">$1.699.999</span>
+              <div className="text-sm text-gray-400">COP</div>
             </div>
-            <ul className="space-y-3 text-gray-500 mb-8">
+            <ul className="space-y-3 text-gray-300 mb-8">
               <li className="flex items-start">
-                <span className="text-gray-500 mr-3">•</span>
+                <span className="text-cyan-400 mr-3">•</span>
                 <span className="text-sm">Desarrollo completo de sitio web personalizado</span>
               </li>
               <li className="flex items-start">
-                <span className="text-gray-500 mr-3">•</span>
+                <span className="text-cyan-400 mr-3">•</span>
                 <span className="text-sm">Consultoría estratégica + asesoría mensual</span>
               </li>
               <li className="flex items-start">
-                <span className="text-gray-500 mr-3">•</span>
+                <span className="text-cyan-400 mr-3">•</span>
                 <span className="text-sm">Integración con WhatsApp, formularios y CRM básico</span>
               </li>
               <li className="flex items-start">
-                <span className="text-gray-500 mr-3">•</span>
+                <span className="text-cyan-400 mr-3">•</span>
                 <span className="text-sm">Diseño de branding completo</span>
               </li>
               <li className="flex items-start">
-                <span className="text-gray-500 mr-3">•</span>
+                <span className="text-cyan-400 mr-3">•</span>
                 <span className="text-sm">Automatización básica con herramientas de IA</span>
               </li>
             </ul>
             <button
-              disabled
-              className="w-full border-2 border-gray-500 text-gray-500 px-6 py-3 rounded-full font-bold mb-4 cursor-not-allowed"
+              onClick={() => window.open('https://mpago.li/1nFLPLW', '_blank')}
+              className="w-full bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-full font-bold transition-all duration-300 mb-4 cursor-pointer hover:scale-105"
             >
               ADQUIRIR PLAN
             </button>
             <div className="text-center">
               <a 
                 href="https://wa.me/573002278962?text=Hola%20Ronald,%20tengo%20una%20pregunta%20sobre%20el%20plan%20Ecosistema%20Digital%20Pro" 
-                className="text-gray-500 hover:text-gray-400 text-sm underline"
+                className="text-gray-400 hover:text-cyan-400 text-sm transition-all duration-300 cursor-pointer hover:scale-105 inline-block"
               >
-                TENGO UNA PREGUNTA
+                ¿Tienes alguna pregunta?
               </a>
             </div>
           </div>

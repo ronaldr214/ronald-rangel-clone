@@ -1,30 +1,122 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function About() {
   const [experienceCount, setExperienceCount] = useState(0);
   const [projectsCount, setProjectsCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  
+  const statsRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Animación simple de contadores
-    const timer1 = setInterval(() => {
-      setExperienceCount(prev => prev < 15 ? prev + 1 : 15);
-    }, 100);
+    gsap.registerPlugin(ScrollTrigger);
 
-    const timer2 = setInterval(() => {
-      setProjectsCount(prev => prev < 100 ? prev + 5 : 100);
-    }, 50);
+    if (statsRef.current && experienceRef.current && projectsRef.current) {
+      // Configurar la animación inicial - números ocultos
+      gsap.set([experienceRef.current, projectsRef.current], {
+        rotationY: 90,
+        opacity: 0,
+        scale: 0.5
+      });
 
-    setTimeout(() => {
-      clearInterval(timer1);
-      clearInterval(timer2);
-    }, 2000);
+      ScrollTrigger.create({
+        trigger: statsRef.current,
+        start: "top 80%",
+        end: "bottom 20%",
+        onEnter: () => {
+          if (!hasAnimated) {
+            setHasAnimated(true);
+            
+            // Animación de entrada de las tarjetas
+            gsap.to([experienceRef.current, projectsRef.current], {
+              duration: 0.8,
+              rotationY: 0,
+              opacity: 1,
+              scale: 1,
+              ease: "back.out(1.7)",
+              stagger: 0.2
+            });
+
+            // Animación de contadores con efecto giratorio
+            let experienceTimer: NodeJS.Timeout;
+            let projectsTimer: NodeJS.Timeout;
+            
+            // Contador de experiencia con rotación
+            experienceTimer = setInterval(() => {
+              setExperienceCount(prev => {
+                const next = prev < 15 ? prev + 1 : 15;
+                
+                // Efecto de rotación en cada incremento
+                if (experienceRef.current) {
+                  gsap.to(experienceRef.current, {
+                    duration: 0.3,
+                    rotationY: 360,
+                    ease: "power2.out",
+                    yoyo: false
+                  });
+                }
+                
+                return next;
+              });
+            }, 120);
+
+            // Contador de proyectos con rotación
+            projectsTimer = setInterval(() => {
+              setProjectsCount(prev => {
+                const next = prev < 100 ? prev + 5 : 100;
+                
+                // Efecto de rotación en cada incremento
+                if (projectsRef.current) {
+                  gsap.to(projectsRef.current, {
+                    duration: 0.3,
+                    rotationY: 360,
+                    ease: "power2.out",
+                    yoyo: false
+                  });
+                }
+                
+                return next;
+              });
+            }, 60);
+
+            // Limpiar timers
+            setTimeout(() => {
+              clearInterval(experienceTimer);
+              clearInterval(projectsTimer);
+            }, 2500);
+          }
+        },
+        onLeave: () => {
+          // Animación al salir de la vista
+          gsap.to([experienceRef.current, projectsRef.current], {
+            duration: 0.5,
+            rotationY: -90,
+            opacity: 0.5,
+            scale: 0.9,
+            ease: "power2.in"
+          });
+        },
+        onEnterBack: () => {
+          // Animación al volver a entrar
+          gsap.to([experienceRef.current, projectsRef.current], {
+            duration: 0.6,
+            rotationY: 0,
+            opacity: 1,
+            scale: 1,
+            ease: "back.out(1.4)"
+          });
+        }
+      });
+    }
 
     return () => {
-      clearInterval(timer1);
-      clearInterval(timer2);
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, []);
+  }, [hasAnimated]);
 
   return (
     <section className="bg-slate-700 py-20 px-6">
@@ -48,12 +140,20 @@ export default function About() {
             TE PUEDO ATENDER AHORA MISMO
           </a>
 
-          <div className="mt-12 grid grid-cols-2 gap-8">
-            <div className="text-center p-6 bg-slate-800 rounded-lg">
+          <div ref={statsRef} className="mt-12 grid grid-cols-2 gap-8">
+            <div 
+              ref={experienceRef}
+              className="text-center p-6 bg-slate-800 rounded-lg transform-gpu perspective-1000 hover:scale-105 transition-transform duration-300"
+              style={{ perspective: '1000px' }}
+            >
               <div className="text-4xl font-black text-cyan-400 mb-2">{experienceCount}+</div>
               <div className="text-sm text-gray-400">Años de experiencia</div>
             </div>
-            <div className="text-center p-6 bg-slate-800 rounded-lg">
+            <div 
+              ref={projectsRef}
+              className="text-center p-6 bg-slate-800 rounded-lg transform-gpu perspective-1000 hover:scale-105 transition-transform duration-300"
+              style={{ perspective: '1000px' }}
+            >
               <div className="text-4xl font-black text-cyan-400 mb-2">{projectsCount}+</div>
               <div className="text-sm text-gray-400">Proyectos exitosos</div>
             </div>

@@ -41,24 +41,33 @@ export default function Services() {
     {
       icon: "/icon-web.webp",
       title: "Desarrollo Web Estratégico",
-      description: "Diseño y construyo sitios web con enfoque en resultados. Tu página será tu mejor vendedor, alineada a tus objetivos y pensada para convertir."
+      description: "Diseño y construyo sitios web con enfoque en resultados. Tu página será tu mejor vendedor, alineada a tus objetivos y pensada para convertir.",
+      whatsappText: "Hola Ronald, me interesa el servicio de Desarrollo Web Estratégico"
     },
     {
       icon: "/icon-branding.webp", 
       title: "Branding con Propósito",
-      description: "Tu marca debe contar tu historia, reflejar tus valores y conectar emocionalmente. Te ayudo a definir una identidad sólida, coherente y memorable."
+      description: "Tu marca debe contar tu historia, reflejar tus valores y conectar emocionalmente. Te ayudo a definir una identidad sólida, coherente y memorable.",
+      whatsappText: "Hola Ronald, me interesa el servicio de Branding con Propósito"
     },
     {
       icon: "/icon-marketing.webp",
       title: "Marketing Digital Inteligente", 
-      description: "Estrategias hechas a medida. Combino creatividad, datos y automatización para ayudarte a crecer en redes, captar leads y aumentar tus ventas."
+      description: "Estrategias hechas a medida. Combino creatividad, datos y automatización para ayudarte a crecer en redes, captar leads y aumentar tus ventas.",
+      whatsappText: "Hola Ronald, me interesa el servicio de Marketing Digital Inteligente"
     },
     {
       icon: "/icon-ai.webp",
       title: "Asesoría en IA Aplicada",
-      description: "La IA ya no es el futuro, es el presente. Te enseño a aprovecharla para optimizar tu negocio, crear contenido más rápido y tomar mejores decisiones."
+      description: "La IA ya no es el futuro, es el presente. Te enseño a aprovecharla para optimizar tu negocio, crear contenido más rápido y tomar mejores decisiones.",
+      whatsappText: "Hola Ronald, me interesa el servicio de Asesoría en IA Aplicada"
     }
   ];
+
+  const handleServiceClick = (whatsappText: string) => {
+    const url = `https://wa.me/573002278962?text=${encodeURIComponent(whatsappText)}`;
+    window.open(url, '_blank');
+  };
 
   return (
     <section className="bg-slate-700 py-20 px-6" id="servicios">
@@ -73,7 +82,7 @@ export default function Services() {
             <div
               key={index}
               ref={(el) => { cardRefs.current[index] = el; }}
-              className="animate-card bg-slate-800 p-8 rounded-lg text-center cursor-pointer transition-all duration-300"
+              className="animate-card bg-slate-800 p-8 rounded-lg text-center transition-all duration-300"
             >
               <div className="w-32 h-32 bg-white rounded-lg mx-auto mb-6 flex items-center justify-center p-4 shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300">
                 <img 
@@ -86,7 +95,10 @@ export default function Services() {
               <p className="text-gray-300 mb-8 leading-relaxed">
                 {service.description}
               </p>
-              <button className="w-full border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-white px-6 py-3 rounded-full font-bold transition-all duration-300">
+              <button 
+                onClick={() => handleServiceClick(service.whatsappText)}
+                className="w-full border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-white px-6 py-3 rounded-full font-bold transition-all duration-300 cursor-pointer hover:scale-105"
+              >
                 LO QUIERO
               </button>
             </div>

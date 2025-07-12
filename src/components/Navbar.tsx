@@ -20,12 +20,16 @@ export default function Navbar() {
         : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="hover:opacity-80 transition-opacity">
+        <Link 
+          href="/" 
+          className="group relative hover:scale-110 transition-all duration-500 ease-out"
+        >
           <img 
             src="/logo.png" 
             alt="Ronald Rangel Logo" 
-            className="h-12 w-auto transition-all duration-300"
+            className="h-16 w-auto transition-all duration-500 group-hover:drop-shadow-[0_0_20px_rgba(6,182,212,0.8)] group-hover:brightness-110"
           />
+          <div className="absolute inset-0 rounded-lg bg-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10"></div>
         </Link>
         
         <div className="hidden md:flex items-center space-x-8">

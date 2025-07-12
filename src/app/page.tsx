@@ -8,7 +8,7 @@ import Blog from '../components/Blog';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
-
+import ScrollToTop from '../components/ScrollToTop';
 
 export default function Home() {
   return (
@@ -22,6 +22,7 @@ export default function Home() {
       <Blog />
       <Contact />
       <Footer />
+      <ScrollToTop />
     </main>
   );
 }
