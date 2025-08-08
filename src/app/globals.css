@@ -51,3 +51,8 @@ body {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
+:root {
+  --brand: oklch(60.9% .126 221.723); /* cyan-600 */
+  --brand-700: oklch(44.6% .043 257.813);
+  --brand-900: oklch(37.2% .024 257.287);
+}
