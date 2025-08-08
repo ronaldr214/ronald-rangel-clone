@@ -186,17 +186,12 @@ export default function ClientPortafolio() {
           </div>
 
           {/* Imagen hero (aspect ratio, sin altura fija) */}
-          <div ref={heroImgRef} className="relative hidden sm:block">
-            <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden ring-1 ring-white/10 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)]">
-              <Image
-                src="/images/ronald-hero.jpg"
-                alt="Ronald Rangel"
-                fill
-                className="object-cover"
-                priority
-              />
+          <div ref={heroImgRef} className="relative order-2 md:order-none">
+            <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-xl overflow-hidden ring-1 ring-white/10 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] mt-6 md:mt-0">
+            <Image src="/images/ronald-hero.jpg" alt="Ronald Rangel" fill className="object-cover" priority />
             </div>
           </div>
+
         </div>
       </section>
 
