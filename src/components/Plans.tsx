@@ -37,6 +37,7 @@ export default function Plans() {
       <div className="max-w-6xl mx-auto">
         <h2 className="section-title text-4xl font-black text-white text-center mb-4">
           Planes Estratégicos para Impulsar tu Negocio
+          <div className="text-sm text-gray-400">Exclusivos para Colombia</div>
         </h2>
         <div className="w-20 h-1 bg-cyan-400 mx-auto mb-16"></div>
         
@@ -48,8 +49,8 @@ export default function Plans() {
           >
             <h3 className="text-2xl font-bold text-cyan-400 text-center mb-6">Despegue Estratégico</h3>
             <div className="text-center mb-6">
-              <span className="text-4xl font-black text-white">$899.000</span>
-              <div className="text-sm text-gray-400">COP</div>
+              <span className="text-4xl font-black text-white">Empieza ya</span>
+              <div className="text-sm text-gray-400"></div>
             </div>
             <ul className="space-y-3 text-gray-300 mb-8">
               <li className="flex items-start">
@@ -84,7 +85,7 @@ export default function Plans() {
                 href="https://wa.me/573002278962?text=Hola%20Ronald,%20tengo%20una%20pregunta%20sobre%20el%20plan%20Despegue%20Estratégico" 
                 className="text-gray-400 hover:text-cyan-400 text-sm transition-all duration-300 cursor-pointer hover:scale-105 inline-block"
               >
-                ¿Tienes alguna pregunta?
+                ¿Alguna duda?
               </a>
             </div>
           </div>
@@ -99,8 +100,8 @@ export default function Plans() {
             </div>
             <h3 className="text-2xl font-bold text-cyan-400 text-center mb-6">Marca con Rumbo</h3>
             <div className="text-center mb-6">
-              <span className="text-4xl font-black text-white">$1.499.999</span>
-              <div className="text-sm text-gray-400">COP</div>
+              <span className="text-4xl font-black text-white">Tu marca lo requiere</span>
+              <div className="text-sm text-gray-400"></div>
             </div>
             <ul className="space-y-3 text-gray-300 mb-8">
               <li className="flex items-start">
@@ -135,7 +136,7 @@ export default function Plans() {
                 href="https://wa.me/573002278962?text=Hola%20Ronald,%20tengo%20una%20pregunta%20sobre%20el%20plan%20Marca%20con%20Rumbo" 
                 className="text-gray-400 hover:text-cyan-400 text-sm transition-all duration-300 cursor-pointer hover:scale-105 inline-block"
               >
-                ¿Tienes alguna pregunta?
+                ¿Alguna duda?
               </a>
             </div>
           </div>
@@ -147,8 +148,8 @@ export default function Plans() {
           >
             <h3 className="text-2xl font-bold text-cyan-400 text-center mb-6">Ecosistema Digital Pro</h3>
             <div className="text-center mb-6">
-              <span className="text-4xl font-black text-white">$1.699.999</span>
-              <div className="text-sm text-gray-400">COP</div>
+              <span className="text-4xl font-black text-white">Este es el tuyo</span>
+              <div className="text-sm text-gray-400"></div>
             </div>
             <ul className="space-y-3 text-gray-300 mb-8">
               <li className="flex items-start">
@@ -183,7 +184,7 @@ export default function Plans() {
                 href="https://wa.me/573002278962?text=Hola%20Ronald,%20tengo%20una%20pregunta%20sobre%20el%20plan%20Ecosistema%20Digital%20Pro" 
                 className="text-gray-400 hover:text-cyan-400 text-sm transition-all duration-300 cursor-pointer hover:scale-105 inline-block"
               >
-                ¿Tienes alguna pregunta?
+                ¿Dudas? Clic aquí.
               </a>
             </div>
           </div>
